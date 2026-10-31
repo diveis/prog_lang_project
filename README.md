@@ -23,7 +23,7 @@ C11 (POSIX), Make / CMake, Git, FIPS 180-4 (SHA-256), RFC 2104 (HMAC).
 
 ```sh
 git clone https://github.com/<your-name>/hashwatch.git
-cd hashwatch
+cd prog_lang_project
 make            # бинарник: build/hashwatch
 make test       # запуск тестов
 sudo make install   # опционально, в /usr/local/bin
