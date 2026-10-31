@@ -1,7 +1,6 @@
 # hashwatch
 
-[![CI](https://github.com/<your-name>/hashwatch/actions/workflows/ci.yml/badge.svg)](https://github.com/<your-name>/hashwatch/actions)
-[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![CI](https://github.com/D/hashwatch/actions/workflows/ci.yml/badge.svg)](https://github.com/D/hashwatch/actions)
 
 **Консольная утилита проверки целостности файлов и обнаружения изменений по сохранённой базе контрольных сумм.**
 Создаёт базу хешей каталога и сообщает об изменённых, удалённых и новых файлах.
@@ -88,7 +87,3 @@ Makefile, CMakeLists.txt
 Платформы POSIX (Linux, macOS, BSD). Отслеживается только содержимое обычных файлов
 (не права, не владелец, не симлинки). Подробнее — в разделе «Модель угроз» в
 [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md).
-
-## Лицензия
-
-[MIT](LICENSE)
