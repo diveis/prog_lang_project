@@ -15,7 +15,7 @@ list(REMOVE_ITEM HW_SOURCES ${CMAKE_SOURCE_DIR}/src/main.c)
 
 add_library(hashwatch_core STATIC ${HW_SOURCES})
 target_include_directories(hashwatch_core PUBLIC src)
-target_compile_definitions(hashwatch_core PUBLIC _POSIX_C_SOURCE=200809L)
+target_compile_definitions(hashwatch_core PUBLIC _POSIX_C_SOURCE=200809L _DARWIN_C_SOURCE)
 if(NOT MSVC)
   target_compile_options(hashwatch_core PUBLIC -Wall -Wextra -Wpedantic)
 endif()

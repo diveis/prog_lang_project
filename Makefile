@@ -1,7 +1,7 @@
 # hashwatch - Makefile
 CC      ?= cc
 CFLAGS  ?= -O2
-CFLAGS  += -std=c11 -D_POSIX_C_SOURCE=200809L -Wall -Wextra -Wpedantic -MMD -MP -Isrc
+CFLAGS  += -std=c11 -D_POSIX_C_SOURCE=200809L -D_DARWIN_C_SOURCE -Wall -Wextra -Wpedantic -MMD -MP -Isrc
 PREFIX  ?= /usr/local
 
 BUILD    := build
