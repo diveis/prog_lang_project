@@ -1,6 +1,6 @@
 # hashwatch
 
-[![CI](https://github.com/D/hashwatch/actions/workflows/ci.yml/badge.svg)](https://github.com/D/hashwatch/actions)
+[![CI](https://github.com/diveis/prog_lang_project/actions/workflows/ci.yml/badge.svg)](https://github.com/diveis/prog_lang_project/actions/workflows/ci.yml)
 
 **Консольная утилита проверки целостности файлов и обнаружения изменений по сохранённой базе контрольных сумм.**
 Создаёт базу хешей каталога и сообщает об изменённых, удалённых и новых файлах.
