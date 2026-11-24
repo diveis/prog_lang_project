@@ -8,7 +8,7 @@ LIB_SRC  := $(filter-out src/main.c,$(wildcard src/*.c))
 LIB_OBJ  := $(patsubst src/%.c,$(BUILD)/%.o,$(LIB_SRC))
 TEST_SRC := $(wildcard tests/test_*.c)
 TEST_BIN := $(patsubst tests/%.c,$(BUILD)/%,$(TEST_SRC))
-
+ 
 ifneq ($(wildcard src/main.c),)
 BIN := $(BUILD)/hashwatch
 endif
