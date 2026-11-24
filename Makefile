@@ -1,8 +1,7 @@
 # hashwatch - Makefile
 CC      ?= cc
 CFLAGS  ?= -O2
-CFLAGS  += -std=c11 -D_POSIX_C_SOURCE=200809L -D_DARWIN_C_SOURCE -Wall -Wextra -Wpedantic -MMD -MP -Isrc
-PREFIX  ?= /usr/local
+CFLAGS += -std=c11 -D_POSIX_C_SOURCE=200809L -D_DARWIN_C_SOURCE -Wall -Wextra -Wpedantic -MMD -MP -IsrcPREFIX  ?= /usr/local
 
 BUILD    := build
 LIB_SRC  := $(filter-out src/main.c,$(wildcard src/*.c))
