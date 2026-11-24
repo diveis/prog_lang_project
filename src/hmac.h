@@ -6,10 +6,9 @@
 
 #include "sha256.h"
 
-/* HMAC-SHA256 по RFC 2104: H((K ^ opad) || H((K ^ ipad) || text)). */
 typedef struct {
     sha256_ctx inner;
-    uint8_t    okey[SHA256_BLOCK_LEN];   /* K ^ opad */
+    uint8_t    okey[SHA256_BLOCK_LEN];  
 } hmac_sha256_ctx;
 
 void hmac_sha256_init(hmac_sha256_ctx *ctx, const void *key, size_t keylen);

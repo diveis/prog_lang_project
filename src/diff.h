@@ -13,10 +13,7 @@ typedef struct {
 } diff_result_t;
 
 /*
- * Сравнивает сохранённую базу (old) с текущим состоянием (cur).
- * Оба списка должны быть отсортированы по пути. Для каждого отличия
- * печатает строку в stdout:  MODIFIED: / DELETED: / NEW: <путь>
- * (при quiet != 0 строки не печатаются, только счётчики).
+ * Сравнивает сохранённую базу (old) с текущим состоянием (cur)
  */
 void diff_lists(const entrylist_t *old, const entrylist_t *cur,
                 int quiet, diff_result_t *res);

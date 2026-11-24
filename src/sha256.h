@@ -7,10 +7,9 @@
 #define SHA256_DIGEST_LEN 32
 #define SHA256_BLOCK_LEN  64
 
-/* Реализация SHA-256 по FIPS 180-4. */
 typedef struct {
     uint32_t state[8];
-    uint64_t total;               /* всего байт обработано */
+    uint64_t total;               
     uint8_t  buf[SHA256_BLOCK_LEN];
     size_t   buflen;
 } sha256_ctx;

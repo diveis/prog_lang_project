@@ -6,7 +6,6 @@
 
 #include "sha256.h"
 
-/* Запись о файле: относительный путь, SHA-256, размер, mtime (справочно). */
 typedef struct {
     char    *path;
     uint8_t  hash[SHA256_DIGEST_LEN];
@@ -23,12 +22,11 @@ typedef struct {
 void entrylist_init(entrylist_t *l);
 void entrylist_free(entrylist_t *l);
 
-/* Добавляет запись (путь копируется). 0 - успех, -1 - нет памяти. */
+/* запись 0 - успех, -1 - нет памяти */
 int entrylist_add(entrylist_t *l, const char *path,
                   const uint8_t hash[SHA256_DIGEST_LEN],
                   uint64_t size, int64_t mtime);
 
-/* Сортировка по пути (strcmp) - детерминированный порядок. */
 void entrylist_sort(entrylist_t *l);
 
 #endif

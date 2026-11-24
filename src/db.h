@@ -19,16 +19,14 @@ typedef enum {
 const char *db_strerror(db_status s);
 
 /*
- * Сохраняет список в файл (атомарно: временный файл + rename).
- * Если key != NULL, в конец добавляется HMAC-SHA256 всего содержимого.
+ * сохраняет список в файл (временный файл + rename).
+ * если key != NULL, в конец добавляется HMAC-SHA256 всего содержимого.
  */
 db_status db_save(const char *path, const entrylist_t *list,
                   const uint8_t *key, size_t keylen);
 
 /*
- * Загружает базу. Если в файле есть MAC - обязателен key и он проверяется
- * ДО разбора содержимого. Результат отсортирован по пути.
- */
+ * если в файле есть MAC - обязателен key и он проверяется до разбора содержимого */
 db_status db_load(const char *path, entrylist_t *out,
                   const uint8_t *key, size_t keylen);
 

@@ -1,4 +1,3 @@
-#!/bin/sh
 # Интеграционные тесты CLI. Использование: sh tests/integration.sh <path/to/hashwatch>
 BIN=${1:-build/hashwatch}
 case "$BIN" in /*) ;; *) BIN="$PWD/$BIN" ;; esac
@@ -66,7 +65,6 @@ expect_out "HMAC mismatch"              "wrong key message"
 sed '2s/^./0/' "$DB" > "$T/forged.hwdb"
 expect_rc 2 "forged database rejected"  "$BIN" check "$D" -d "$T/forged.hwdb" -k "$KEY"
 
-# подмена: убрали MAC, подсунули базу без защиты
 expect_rc 0 "init unprotected db"       "$BIN" init "$D" -d "$T/plain.hwdb"
 expect_rc 2 "downgrade (no MAC) rejected" "$BIN" check "$D" -d "$T/plain.hwdb" -k "$KEY"
 

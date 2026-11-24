@@ -16,7 +16,6 @@
 #define HASHWATCH_VERSION "0.1.0"
 #define MAX_KEY_SIZE (1 << 20)
 
-/* Коды возврата */
 enum { EXIT_CLEAN = 0, EXIT_CHANGED = 1, EXIT_ERROR = 2 };
 
 typedef struct {
