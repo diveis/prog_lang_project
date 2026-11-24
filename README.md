@@ -69,7 +69,7 @@ Summary: 1 modified, 1 deleted, 1 new, 42 unchanged
 | [docs/USAGE.md](docs/USAGE.md) | Руководство пользователя |
 | [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) | Модули, алгоритм, модель угроз |
 | [docs/DB_FORMAT.md](docs/DB_FORMAT.md) | Формат файла базы |
-| [CONTRIBUTING.md](CONTRIBUTING.md) | Сборка, тесты, стиль коммитов |
+| [CONTRIBUTING.md](CONTRIBUTING.md) | Сборка, тесты |
 | [CHANGELOG.md](CHANGELOG.md) | История версий |
 
 ## Структура репозитория
@@ -84,6 +84,5 @@ Makefile, CMakeLists.txt
 
 ## Ограничения
 
-Платформы POSIX (Linux, macOS, BSD). Отслеживается только содержимое обычных файлов
-(не права, не владелец, не симлинки). Подробнее — в разделе «Модель угроз» в
+Платформы POSIX (Linux, macOS, BSD). Отслеживается только содержимое обычных файлов. Подробнее — в разделе «Модель угроз» в
 [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md).

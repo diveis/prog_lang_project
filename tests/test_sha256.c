@@ -18,7 +18,6 @@ static void expect(const void *data, size_t len, const char *hex)
 
 int main(void)
 {
-    /* Векторы FIPS 180-4 / NIST */
     expect("", 0,
            "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855");
     expect("abc", 3,
@@ -27,13 +26,11 @@ int main(void)
     expect(m2, strlen(m2),
            "248d6a61d20638b8e5c026930c3e6039a33ce45964ff2167f6ecedd419db06c1");
 
-    /* Миллион символов 'a' */
     char *big = malloc(1000000);
     memset(big, 'a', 1000000);
     expect(big, 1000000,
            "cdc76e5c9914fb9281a1c7e284d73e67f1809a48a497200e046d39ccc7112cd0");
 
-    /* Потоковое хеширование кусками разной длины даёт тот же результат */
     sha256_ctx c;
     uint8_t d1[32], d2[32];
     sha256_init(&c);
@@ -49,7 +46,6 @@ int main(void)
     CHECK(memcmp(d1, d2, 32) == 0);
     free(big);
 
-    /* Граничные длины вокруг размера блока / паддинга */
     for (size_t n = 54; n <= 66; n++) {
         char buf[80];
         memset(buf, 'x', sizeof buf);

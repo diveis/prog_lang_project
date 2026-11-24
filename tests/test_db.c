@@ -25,7 +25,7 @@ int main(void)
     const uint8_t other[] = "another-key";
     entrylist_t src, dst;
 
-    /* Без ключа: туда-обратно, пути с пробелами сохраняются */
+    /* без ключа: туда-обратно, пути с пробелами сохраняются */
     entrylist_init(&src); fill(&src);
     CHECK(db_save(path, &src, NULL, 0) == DB_OK);
     entrylist_init(&dst);
@@ -38,12 +38,12 @@ int main(void)
         CHECK(dst.items[0].hash[0] == 0xab);
     }
     entrylist_free(&dst);
-    /* Ключ передан, а база без MAC - отказ (защита от понижения защиты) */
+    /* ключ передан, а база без MAC - отказ */
     entrylist_init(&dst);
     CHECK(db_load(path, &dst, key, sizeof key - 1) == DB_ERR_NOMAC);
     entrylist_free(&dst);
 
-    /* С ключом */
+    /* с ключом */
     CHECK(db_save(path, &src, key, sizeof key - 1) == DB_OK);
     entrylist_init(&dst);
     CHECK(db_load(path, &dst, key, sizeof key - 1) == DB_OK);
@@ -56,7 +56,7 @@ int main(void)
     CHECK(dst.count == 0);
     entrylist_free(&dst);
 
-    /* Подмена содержимого: меняем один символ хеша */
+    /* меняем один символ хеша */
     FILE *f = fopen(path, "r+b");
     CHECK(f != NULL);
     if (f) {
@@ -70,7 +70,6 @@ int main(void)
     CHECK(db_load(path, &dst, key, sizeof key - 1) == DB_ERR_MAC);
     entrylist_free(&dst);
 
-    /* Мусор и несуществующий файл */
     f = fopen(path, "wb");
     if (f) { fputs("garbage\n", f); fclose(f); }
     entrylist_init(&dst);

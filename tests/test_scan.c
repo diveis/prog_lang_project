@@ -50,12 +50,10 @@ int main(void)
         CHECK(strcmp(l.items[1].path, "b.txt") == 0);
         CHECK(strcmp(l.items[2].path, "sub/c.txt") == 0);
         CHECK(l.items[0].size == 3);
-        /* SHA-256("abc") начинается с 0xba7816bf */
         CHECK(l.items[0].hash[0] == 0xba && l.items[0].hash[1] == 0x78);
     }
     entrylist_free(&l);
 
-    /* Несуществующий каталог */
     entrylist_init(&l);
     nerr = 0;
     CHECK(scan_dir("/nonexistent/hashwatch/dir", NULL, &l, &nerr) == -1);

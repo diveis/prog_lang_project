@@ -19,11 +19,6 @@ cmake -S . -B build-cmake && cmake --build build-cmake && ctest --test-dir build
 make clean && CFLAGS="-O1 -g -fsanitize=address,undefined" make test
 ```
 
-## Стиль коммитов
-
-Используем [Conventional Commits](https://www.conventionalcommits.org/):
-`feat:`, `fix:`, `docs:`, `test:`, `build:`, `ci:`, `refactor:`, `chore:`.
-
 ## Правила
 
 * Код на C11 + POSIX.1-2008, без предупреждений при `-Wall -Wextra -Wpedantic`.

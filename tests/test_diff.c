@@ -32,7 +32,7 @@ int main(void)
 
     entrylist_free(&o); entrylist_free(&c);
 
-    /* Пустые списки */
+    /* пустые списки */
     entrylist_init(&o); entrylist_init(&c);
     diff_lists(&o, &c, 1, &r);
     CHECK(diff_total_changes(&r) == 0 && r.unchanged == 0);

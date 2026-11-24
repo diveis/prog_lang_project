@@ -42,7 +42,7 @@ int main(void)
     expect(key6, sizeof key6, m6, strlen(m6),
            "60e431591ee0b67f0d8a26aacbf5b77f8e0bc6213728c5140546040f0ee37f54");
 
-    /* Потоковый режим совпадает с однократным */
+    /* потоковый режим совпадает с однократным */
     hmac_sha256_ctx c;
     uint8_t a[32], b[32];
     hmac_sha256_init(&c, "Jefe", 4);
